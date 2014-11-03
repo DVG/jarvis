@@ -9,7 +9,11 @@ module Jarvis
       case text
       when /.*(gif|GIF)/
         Jarvis::Services::GifService
+      
+      when /.+(success kid|Success Kid)/
+        Jarvis::Services::MemeGeneratorService
       end
+
     end
   end
 end
