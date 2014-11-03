@@ -13,6 +13,8 @@ module Jarvis
         Jarvis::Services::MemeGeneratorService
       when /.*(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
+      when /^(Siri|siri)/
+        Jarvis::Services::SiriService
       else
         Jarvis::Services::NullService
       end
