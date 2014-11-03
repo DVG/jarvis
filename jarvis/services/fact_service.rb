@@ -4,6 +4,7 @@ module Jarvis
 
       def random_fact
         @fact = HTTParty.get("http://numbersapi.com/random")
+        self
       end
 
       def run

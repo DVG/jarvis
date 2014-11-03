@@ -18,8 +18,13 @@ describe "App" do
     expect(last_response).to be_ok
   end
 
-  it "is polite", focus: true do
+  it "is polite" do
     post "/jarvis", slack_outgoing_message("Jarvis, thanks")
+    expect(last_response).to be_ok
+  end
+
+  it "responses to facts" do
+    post "/jarvis", slack_outgoing_message("Jarvis, FACT")
     expect(last_response).to be_ok
   end
 end
