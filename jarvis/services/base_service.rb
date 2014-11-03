@@ -5,7 +5,7 @@ module Jarvis
       include HTTParty
 
       attr_accessor :text
-      def initialize(text)
+      def initialize(text="")
         # Should give the service the params["text"] sent with the request to Jarvis, so the service can
         # implement more specific behaviors based on what exactly they asked for
         @text = text

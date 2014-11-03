@@ -15,7 +15,7 @@ module Jarvis
 
       def random
         @response = HTTParty.get("#{host}#{endpoint}random?api_key=#{API_KEY}#{additional_params}") 
-        @link = response.parsed_response["data"]["image_url"]
+        @link = @response.parsed_response["data"]["image_url"]
         self
       end
 
