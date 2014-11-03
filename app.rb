@@ -8,3 +8,8 @@ require 'jarvis'
 get "/" do
   json text: "Hello, I'm Jarvis"
 end
+
+post "/jarvis" do
+  interpreter = Jarvis::Interpreter.new(params)
+  interpreter.determine_service.new.run.say
+end
