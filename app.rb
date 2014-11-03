@@ -11,5 +11,5 @@ end
 
 post "/jarvis" do
   interpreter = Jarvis::Interpreter.new(params)
-  interpreter.determine_service.new.run.say
+  json text: interpreter.determine_service.new.run.say
 end
