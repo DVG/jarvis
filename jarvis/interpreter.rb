@@ -15,6 +15,8 @@ module Jarvis
         Jarvis::Services::PoliteService
       when /^(Siri|siri)/
         Jarvis::Services::SiriService
+      when /.*(fact|FACT|Fact)/
+        Jarvis::Services::FactService
       else
         Jarvis::Services::NullService
       end
