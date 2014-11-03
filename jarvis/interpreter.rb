@@ -8,11 +8,10 @@ module Jarvis
     def determine_service
       case text
       when /.*(gif|GIF)/
-        Jarvis::Services::GifService
-      
+        Jarvis::Services::GifService 
       when /.+(success kid|Success Kid)/
         Jarvis::Services::MemeGeneratorService
-      when /(thanks|thank you|Thanks|Thank You)/
+      when /.*(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
       else
         Jarvis::Services::NullService

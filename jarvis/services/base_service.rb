@@ -14,6 +14,8 @@ module Jarvis
       def run
         # All Services should implement this method to perform their designated action
         # Not implementing this method will result in nothing being run and return whatever comes from #say
+        # You should always return self as to not break the api endpoint
+        self
       end
 
       def say
