@@ -12,6 +12,10 @@ module Jarvis
       
       when /.+(success kid|Success Kid)/
         Jarvis::Services::MemeGeneratorService
+      when /(thanks|thank you|Thanks|Thank You)/
+        Jarvis::Services::PoliteService
+      else
+        Jarvis::Services::NullService
       end
 
     end

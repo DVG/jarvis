@@ -4,14 +4,20 @@ module Jarvis
       require 'httparty'
       include HTTParty
 
-      attr_accessor :response, :link
-
-      def host
-
+      attr_accessor :text
+      def initialize(text)
+        # Should give the service the params["text"] sent with the request to Jarvis, so the service can
+        # implement more specific behaviors based on what exactly they asked for
+        @text = text
       end
 
-      def endpoint
+      def run
+        # All Services should implement this method to perform their designated action
+        # Not implementing this method will result in nothing being run and return whatever comes from #say
+      end
 
+      def say
+        # All Services should implement this method to return what Jarvis says in respose
       end
     end
   end
