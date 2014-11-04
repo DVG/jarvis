@@ -19,7 +19,7 @@ module Jarvis
         Jarvis::Services::FactService
       when /.*(fuck|shit|goddamn)/
         Jarvis::Services::RudeService
-      when /.*(tell me about yourself|Tell me about yourself|who are you|Who are you)/
+      when /.*(about|About|ABOUT)/
         Jarvis::Services::AboutService
       when /.*(weather|Weather)/
         Jarvis::Services::WeatherService
