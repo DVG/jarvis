@@ -21,6 +21,8 @@ module Jarvis
         Jarvis::Services::RudeService
       when /.*(tell me about yourself|Tell me about yourself|who are you|Who are you)/
         Jarvis::Services::AboutService
+      when /.*(weather|Weather)/
+        Jarvis::Services::WeatherService
       else
         Jarvis::Services::NullService
       end
