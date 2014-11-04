@@ -16,7 +16,7 @@ module Jarvis
       end
 
       def temp
-        ((response["main"]["temp"].to_i - 273.15) * 1.8) + 32
+        (((response["main"]["temp"].to_i - 273.15) * 1.8) + 32).to_i
       end
 
 
