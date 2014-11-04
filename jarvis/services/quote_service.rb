@@ -4,6 +4,7 @@ module Jarvis
 
       def run
         @response = HTTParty.get("http://iheartquotes.com/api/v1/random?format=json#{source}")
+        self
       end
 
       def say
