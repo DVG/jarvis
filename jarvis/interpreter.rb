@@ -23,6 +23,8 @@ module Jarvis
         Jarvis::Services::AboutService
       when /.*(weather|Weather)/
         Jarvis::Services::WeatherService
+      when /.*(8ball|8BALL|8Ball)/
+        Jarvis::Services::EightballService
       else
         Jarvis::Services::NullService
       end
