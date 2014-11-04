@@ -1,3 +1,4 @@
+Fortune = Hash
 module Jarvis
   module Services
     class QuoteService < BaseService
