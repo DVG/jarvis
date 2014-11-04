@@ -15,7 +15,7 @@ module Jarvis
 
       def run
         @tweet = post_tweet
-        @link = "https://twitter.com/jpmcatpen/status/#{@tweet.id}"
+        @link = "https://twitter.com/monnarcasoft/status/#{@tweet.id}"
         self
       end
 
