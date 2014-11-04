@@ -9,8 +9,8 @@ module Jarvis
       ACCESS_TOKEN = ENV["TWITTER_ACCESS_TOKEN"]
       TOKEN_SECRET = ENV["TWITTER_TOKEN_SECRET"]
 
-      def initialize()
-        super
+      def initialize(text)
+        super(text)
         @twitter = get_twitter
       end
 
