@@ -7,14 +7,14 @@ module Jarvis
 
     def determine_service
       case text
+      when /^(Siri|siri)/
+        Jarvis::Services::SiriService
       when /.*(gif|GIF)/
         Jarvis::Services::GifService 
       when /.+(success kid|Success Kid)/
         Jarvis::Services::MemeGeneratorService
       when /.*(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
-      when /^(Siri|siri)/
-        Jarvis::Services::SiriService
       when /.*(fact|FACT|Fact)/
         Jarvis::Services::FactService
       when /.*(fuck|shit|goddamn)/
