@@ -43,6 +43,14 @@ describe Jarvis::Interpreter do
         expect(subject.determine_service).to eq Jarvis::Services::FactService
       end
     end
+
+    describe "Routes rude requests to the rude service" do
+      let(:params) { slack_outgoing_message("Jarvis, fuck off") }
+      subject { described_class.new(params) }
+      it "Returns the FactService constant" do
+        expect(subject.determine_service).to eq Jarvis::Services::RudeService
+      end
+    end
   end
 
 end

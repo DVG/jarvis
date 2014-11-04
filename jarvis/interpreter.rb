@@ -17,6 +17,8 @@ module Jarvis
         Jarvis::Services::SiriService
       when /.*(fact|FACT|Fact)/
         Jarvis::Services::FactService
+      when /.*(fuck|shit|goddamn)/
+        Jarvis::Services::RudeService
       else
         Jarvis::Services::NullService
       end
