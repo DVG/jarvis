@@ -42,7 +42,7 @@ private
 
       def post_tweet
         @response = HTTParty.get("#{host}#{endpoint}?#{request}")
-        @msg = @response.parsed_response["messages"][1]["text"]
+        @msg = @response.parsed_response["messages"][1]["message"]["text"]
         @twitter.update(@msg)
       end
 
