@@ -12,11 +12,16 @@ module Jarvis
       end
 
       def description
-        @response["weather"]["description"]
+        response["weather"].first["description"]
       end
 
       def temp
-        ((@response["main"]["temp"] - 273.15) * 1.8) + 32
+        ((response["main"]["temp"].to_i - 273.15) * 1.8) + 32
+      end
+
+
+      def response
+        @response.parsed_response
       end
     end
   end

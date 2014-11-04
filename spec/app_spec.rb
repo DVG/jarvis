@@ -27,4 +27,9 @@ describe "App" do
     post "/jarvis", slack_outgoing_message("Jarvis, FACT")
     expect(last_response).to be_ok
   end
+
+  it "responses to facts" do
+    post "/jarvis", slack_outgoing_message("Jarvis, weather")
+    expect(last_response).to be_ok
+  end
 end
