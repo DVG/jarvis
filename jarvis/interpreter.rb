@@ -27,6 +27,8 @@ module Jarvis
         Jarvis::Services::TwitterService
       when /.*(8ball|8BALL|8Ball)/
         Jarvis::Services::EightballService
+      when /.*(quote|Quote)/
+        Jarvis::Services::QuoteService
       else
         Jarvis::Services::NullService
       end
