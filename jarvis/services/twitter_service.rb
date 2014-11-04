@@ -14,10 +14,6 @@ module Jarvis
         @twitter = get_twitter
       end
 
-      def request
-        [token, channel, count].join("&")
-      end
-
       def run
         @tweet = post_tweet
         @link = "https://twitter.com/#{HANDLE}/status/#{@tweet.id}"
@@ -42,10 +38,14 @@ private
 
       def post_tweet
         @response = HTTParty.get("#{host}#{endpoint}?#{request}")
-        @msg = @response.parsed_response["messages"][1]["message"]["text"]
+        @msg = @response.parsed_response["messages"][1]["text"]
         @twitter.update(@msg)
       end
 
+      def request
+        [token, channel, count].join("&")
+      end
+      
       def host
         "https://slack.com/api/"
       end
