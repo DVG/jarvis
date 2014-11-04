@@ -4,6 +4,7 @@ require 'sinatra'
 require "sinatra/json"
 require 'json'
 require 'jarvis'
+require 'twitter'
 
 get "/" do
   json text: "Hello, I'm Jarvis"
