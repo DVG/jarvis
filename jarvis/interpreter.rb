@@ -25,6 +25,8 @@ module Jarvis
         Jarvis::Services::WeatherService
       when /.*(tweet|Tweet)/
         Jarvis::Services::TwitterService
+      when /.*(8ball|8BALL|8Ball)/
+        Jarvis::Services::EightballService
       else
         Jarvis::Services::NullService
       end
