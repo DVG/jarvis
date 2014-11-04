@@ -2,7 +2,12 @@ module Jarvis
   module Services
     class TwitterService < BaseService
 
-      TOKEN = "xoxp-2867696730-2867738388-2930730274-d0198a"
+      TOKEN = ENV["TWITTER_TOKEN"]
+      HANDLE = ENV["TWITTER_HANDLE"]
+      CONSUMER_KEY = ENV["TWITTER_CONSUMER_KEY"]
+      CONSUMER_SECRET = ENV["TWITTER_CONSUMER_SECRET"]
+      ACCESS_TOKEN = ENV["TWITTER_ACCESS_TOKEN"]
+      TOKEN_SECRET = ENV["TWITTER_TOKEN_SECRET"]
 
       def initialize()
         super
@@ -15,7 +20,7 @@ module Jarvis
 
       def run
         @tweet = post_tweet
-        @link = "https://twitter.com/monnarcasoft/status/#{@tweet.id}"
+        @link = "https://twitter.com/#{HANDLE}/status/#{@tweet.id}"
         self
       end
 
@@ -27,10 +32,10 @@ private
 
       def get_twitter
         client = Twitter::REST::Client.new do |config|
-          config.consumer_key        = "tRDGznfoPEu5snhHXfJBW0t8J"
-          config.consumer_secret     = "9qathWz1Uhe0m7qeKFxsibb8Lp4n14ylbXGtWYKu3Ta8PaHkZH"
-          config.access_token        = "2859748697-x4W6RsCXpnOoretNrt8iv8PsXc6tNSmIXjLs1xi"
-          config.access_token_secret = "uDMBPvCoJAcnNTSRzqzZCssvo24TAOOF2G0kNkt6WHTdw"
+          config.consumer_key        = CONSUMER_KEY 
+          config.consumer_secret     = CONSUMER_SECRET 
+          config.access_token        = ACCESS_TOKEN 
+          config.access_token_secret = TOKEN_SECRET 
         end
         client
       end
