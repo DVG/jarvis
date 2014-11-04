@@ -19,6 +19,8 @@ module Jarvis
         Jarvis::Services::FactService
       when /.*(fuck|shit|goddamn)/
         Jarvis::Services::RudeService
+      when /.*(tell me about yourself|Tell me about yourself|who are you|Who are you)/
+        Jarvis::Services::AboutService
       else
         Jarvis::Services::NullService
       end
