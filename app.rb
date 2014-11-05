@@ -4,6 +4,8 @@ require 'sinatra'
 require "sinatra/json"
 require 'json'
 require 'jarvis'
+require 'slack'
+require 'twitter'
 
 get "/" do
   json text: "Hello, I'm Jarvis"
@@ -11,5 +13,12 @@ end
 
 post "/jarvis" do
   interpreter = Jarvis::Interpreter.new(params)
-  json text: interpreter.determine_service.new(params["text"]).run.say
+  message = Slack::Message.new(params)
+  service = interpreter.determine_service.new(message)
+  begin
+    service.run
+    json text: service.say
+  rescue => e
+    json text: "I'm sorry, #{message.user_name}, something went wrong, #{e.message}"
+  end
 end

@@ -11,7 +11,7 @@ module Jarvis
         Jarvis::Services::SiriService
       when /.*(gif|GIF)/
         Jarvis::Services::GifService 
-      when /.+(success kid|Success Kid)/
+      when Jarvis::Services::MemeGeneratorService::REGEX 
         Jarvis::Services::MemeGeneratorService
       when /.*(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
@@ -24,6 +24,18 @@ module Jarvis
       when /.*(weather|Weather)/
         Jarvis::Services::WeatherService
       when /.*(8ball|8BALL|8Ball)/
+        Jarvis::Services::EightballService
+      when /.*(tweet|Tweet)/
+        Jarvis::Services::TwitterService
+      when /.*(8ball|8BALL|8Ball)/
+        Jarvis::Services::EightballService
+      when /.*(quote|Quote)/
+        Jarvis::Services::QuoteService
+      when /.*(are you up|Are You Up|Are you up)/
+        Jarvis::Services::UpService
+      when /.*(word up|Word Up|Word up|word Up)/
+        Jarvis::Services::UrbanDictionaryService
+      when /\?$/
         Jarvis::Services::EightballService
       else
         Jarvis::Services::NullService
