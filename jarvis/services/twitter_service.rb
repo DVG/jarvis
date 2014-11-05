@@ -59,7 +59,7 @@ private
       end
 
       def channel
-        "channel=C02RHLGMS"
+        "channel=#{@channel_id}"
       end
 
       def count
