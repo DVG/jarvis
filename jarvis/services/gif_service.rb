@@ -30,7 +30,7 @@ module Jarvis
 private
  
     def additional_params
-      case @text
+      case text
       when /.*(cat|kitty|Cat|CAT|KITTY|Kitty).*/
         "&tag=cat"
       when /.*(sloth|Sloth|SLOTH).*/
