@@ -3,7 +3,7 @@ module Jarvis
     class BaseService
       require 'httparty'
       include HTTParty
-
+      require 'uri'
       attr_accessor :message
       def initialize(message)
         # all attributes of the slack message will be available to the service class.

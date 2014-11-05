@@ -33,11 +33,11 @@ module Jarvis
       end
 
       def text0
-        meme_text.split(",")[0].strip
+        URI.encode(meme_text.split(",")[0].strip)
       end
 
       def text1
-        meme_text.split(",")[1].strip
+        URI.encode(meme_text.split(",")[1].strip)
       end
 
       def get_meme_url
