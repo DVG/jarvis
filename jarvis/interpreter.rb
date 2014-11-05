@@ -11,7 +11,7 @@ module Jarvis
         Jarvis::Services::SiriService
       when /.*(gif|GIF)/
         Jarvis::Services::GifService 
-      when /.+(success kid|Success Kid)/
+      when Jarvis::Services::MemeGeneratorService::REGEX 
         Jarvis::Services::MemeGeneratorService
       when /.*(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
