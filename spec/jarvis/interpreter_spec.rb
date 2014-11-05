@@ -5,7 +5,7 @@ describe Jarvis::Interpreter do
   context "Service Routing" do
   
     describe "Routes gif requests to the GIF service" do
-      let(:params) { slack_outgoing_message("Jarvis, a gif please") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, a gif please") }
       subject { described_class.new(params) }
       it "Returns the GIF Service constant" do
         expect(subject.determine_service).to eq Jarvis::Services::GifService
@@ -13,7 +13,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes GIF requests to the GIF service" do
-      let(:params) { slack_outgoing_message("Jarvis, a GIF please") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, a GIF please") }
       subject { described_class.new(params) }
       it "Returns the GIF Service constant" do
         expect(subject.determine_service).to eq Jarvis::Services::GifService
@@ -21,7 +21,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes success kid requests to the MemeGenerator service" do
-      let(:params) { slack_outgoing_message("Jarvis, success kid") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, success kid") }
       subject { described_class.new(params) }
       it "Returns the MemeGeneratorService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::MemeGeneratorService
@@ -29,7 +29,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes Success Kid requests to the MemeGenerator service" do
-      let(:params) { slack_outgoing_message("Jarvis, Success Kid") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, Success Kid") }
       subject { described_class.new(params) }
       it "Returns the MemeGeneratorService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::MemeGeneratorService
@@ -37,7 +37,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes FACT requests to the Fact service" do
-      let(:params) { slack_outgoing_message("Jarvis, Fact") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, Fact") }
       subject { described_class.new(params) }
       it "Returns the FactService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::FactService
@@ -45,7 +45,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes rude requests to the rude service" do
-      let(:params) { slack_outgoing_message("Jarvis, fuck off") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, fuck off") }
       subject { described_class.new(params) }
       it "Returns the FactService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::RudeService
