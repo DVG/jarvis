@@ -1,6 +1,6 @@
 module Jarvis
   module Services
-    class UpService
+    class UpService < BaseService
       def say
         [
           "Yes, #{user_name}, I'm up and ready for more operations",
