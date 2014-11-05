@@ -23,6 +23,8 @@ module Jarvis
         rescue
             false
         end
+      end
+      
     end
   end
 end
