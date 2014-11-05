@@ -15,6 +15,10 @@ post "/jarvis" do
   interpreter = Jarvis::Interpreter.new(params)
   message = Slack::Message.new(params)
   service = interpreter.determine_service.new(message)
-  service.run
-  json text: service.say
+  begin
+    service.run
+    json text: service.say
+  rescue => e
+    json text: "I'm sorry, #{message.user_name}, something went wrong, #{e.message}"
+  end
 end
