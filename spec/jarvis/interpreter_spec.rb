@@ -21,7 +21,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes success kid requests to the MemeGenerator service" do
-      let(:params) { slack_outgoing_message(text: "Jarvis, success kid") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, success kid:") }
       subject { described_class.new(params) }
       it "Returns the MemeGeneratorService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::MemeGeneratorService
@@ -29,7 +29,7 @@ describe Jarvis::Interpreter do
     end
 
     describe "Routes Success Kid requests to the MemeGenerator service" do
-      let(:params) { slack_outgoing_message(text: "Jarvis, Success Kid") }
+      let(:params) { slack_outgoing_message(text: "Jarvis, Success Kid:") }
       subject { described_class.new(params) }
       it "Returns the MemeGeneratorService constant" do
         expect(subject.determine_service).to eq Jarvis::Services::MemeGeneratorService

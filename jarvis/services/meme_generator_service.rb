@@ -1,30 +1,47 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /.*(success kid|Success Kid)/
+      REGEX = /.*(success kid|Success Kid):/
       SUCCESS_KID_ID = 121
+      SUCCESS_KID_IMAGE_ID = 1031
       USERNAME = ENV["MEME_GENERATOR_USER"]
       PASSWORD = ENV["MEME_GENERATOR_PASSWORD"]
 
-      def meme_id
+      def meme_params
         case text
         when /(success kid|Success Kid)/
-          SUCCESS_KID_ID
+          "&generatorID=#{SUCCESS_KID_ID}&imageID=#{SUCCESS_KID_IMAGE_ID}"
         else
           121
         end
       end
+      
+      def meme_text
+        text.split(":")[1]
+      end
+
+      def text_params
+        if two_lines?
+          "&text0=#{text0}&text1=#{text1}"
+        else
+          "&text0=#{text0}"
+        end
+      end
+
+      def two_lines?
+        meme_text.split(",").size > 1
+      end
 
       def text0
-        text.split(",")[1]
+        meme_text.split(",")[0].strip
       end
 
       def text1
-        text.split(",")[2]
+        meme_text.split(",")[1].strip
       end
 
       def run 
-        response = HTTParty.get("http://version1.api.memegenerator.net/Instance_Create?username=#{USERNAME}&password=#{PASSWORD}&languageCode=en&generatorID=#{meme_id}&imageID=20&text0=#{text0}&text1=#{text1}")
+        response = HTTParty.get("http://version1.api.memegenerator.net/Instance_Create?username=#{USERNAME}&password=#{PASSWORD}&languageCode=en#{meme_params}&text0=#{text0}&text1=#{text1}")
         @link = response.parsed_response["result"]["instanceImageUrl"]
       end
 
