@@ -31,6 +31,8 @@ module Jarvis
         Jarvis::Services::QuoteService
       when /.*(are you up|Are You Up|Are you up)/
         Jarvis::Services::UpService
+      when /.*(word up|Word Up|Word up|word Up)/
+        Jarvis::Services::UrbanDictionaryService
       when /\?$/
         Jarvis::Services::EightballService
       else
