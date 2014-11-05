@@ -29,6 +29,10 @@ module Jarvis
         Jarvis::Services::EightballService
       when /.*(quote|Quote)/
         Jarvis::Services::QuoteService
+      when /.*(are you up|Are You Up|Are you up)/
+        Jarvis::Services::UpService
+      when /\?$/
+        Jarvis::Services::EightballService
       else
         Jarvis::Services::NullService
       end
