@@ -40,13 +40,17 @@ module Jarvis
         meme_text.split(",")[1].strip
       end
 
+      def get_meme_url
+        "http://version1.api.memegenerator.net/Instance_Create?username=#{USERNAME}&password=#{PASSWORD}&languageCode=en#{meme_params}#{text_params}"
+      end
+
       def run 
-        response = HTTParty.get("http://version1.api.memegenerator.net/Instance_Create?username=#{USERNAME}&password=#{PASSWORD}&languageCode=en#{meme_params}&text0=#{text0}&text1=#{text1}")
+        response = HTTParty.get(get_meme_url)
         @link = response.parsed_response["result"]["instanceImageUrl"]
       end
 
       def say
-        "Here you go, #{user_name}\n\n#{link}"
+        "Here you go, #{user_name}\n\n#{@link}"
       end
     end
   end
