@@ -4,11 +4,10 @@ module Jarvis
       require 'httparty'
       include HTTParty
 
-      attr_accessor :text
-      def initialize(text="")
-        # Should give the service the params["text"] sent with the request to Jarvis, so the service can
-        # implement more specific behaviors based on what exactly they asked for
-        @text = text
+      attr_accessor :message
+      def initialize(message)
+        # all attributes of the slack message will be available to the service class.
+        @message = SimpleDelegator.new(message)
       end
 
       def run
