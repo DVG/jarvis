@@ -19,7 +19,7 @@ module Jarvis
       def pick_a_winner
         entries = @response.parsed_response['list']
         best_entry = entries.max_by {|i| i['thumbs_up'].to_i - i['thumbs_down'].to_i }
-        moar_dots = best_entry['description'].to_s.length > MAX_DEFINITION_LENGTH ? '...' : ''
+        moar_dots = best_entry['definition'].to_s.length > MAX_DEFINITION_LENGTH ? '...' : ''
         
         "#{best_entry['word']} : #{best_entry['definition'].to_s[0...MAX_DEFINITION_LENGTH]}#{moar_dots}"
       end
