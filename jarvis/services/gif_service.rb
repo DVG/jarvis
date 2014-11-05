@@ -33,6 +33,12 @@ private
       case @text
       when /.*(cat|kitty|Cat|CAT|KITTY|Kitty).*/
         "&tag=cat"
+      when /.*(sloth|Sloth|SLOTH).*/
+        "&tag=sloth"
+      when /.*(Bacon|bacon|BACON).*/
+        "&tag=bacon"
+      when /.*(Trippy|trippy|TRIPPY).*/
+        "&tag=trippy"
       else
         ""
       end
