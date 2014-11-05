@@ -2,7 +2,7 @@ module Jarvis
   module Services
     class TwitterService < BaseService
 
-      TOKEN = ENV["TWITTER_TOKEN"]
+      TOKEN = ENV["SLACK_TOKEN"]
       HANDLE = ENV["TWITTER_HANDLE"]
       CONSUMER_KEY = ENV["TWITTER_CONSUMER_KEY"]
       CONSUMER_SECRET = ENV["TWITTER_CONSUMER_SECRET"]
@@ -59,7 +59,7 @@ private
       end
 
       def channel
-        "channel=C02RHLGMS"
+        "channel=#{channel_id}"
       end
 
       def count
