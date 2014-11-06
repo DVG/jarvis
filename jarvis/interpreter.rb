@@ -35,6 +35,8 @@ module Jarvis
         Jarvis::Services::UrbanDictionaryService
       when /(roll|ROLL|Roll|diceroll|Diceroll|DICEROLL|DiceRoll)/
         Jarvis::Services::DiceService
+      when /(suit up|Suit Up|SUIT UP)/
+        Jarvis::Services::NPHService
       when /\?$/
         Jarvis::Services::EightballService
       when /([\d]*\.?[\d]*)\s*([\+\-\/\*\%])\s*([\d]*\.?[\d]*)/
