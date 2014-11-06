@@ -7,35 +7,35 @@ module Jarvis
 
     def determine_service
       case text
-      when /^(Siri|siri)/
+      when /^(Siri)/i
         Jarvis::Services::SiriService
-      when /(gif|GIF)/
+      when /(gif)/i
         Jarvis::Services::GifService
       when Jarvis::Services::MemeGeneratorService::REGEX
         Jarvis::Services::MemeGeneratorService
-      when /(thanks|thank you|Thanks|Thank You).*/
+      when /(thanks|thank you)/i
         Jarvis::Services::PoliteService
-      when /(fact|FACT|Fact)/
+      when /(fact)/i
         Jarvis::Services::FactService
-      when /(fuck|shit|goddamn)/
+      when /(fuck|shit|goddamn)/i
         Jarvis::Services::RudeService
-      when /(about|About|ABOUT)/
+      when /(about)/i
         Jarvis::Services::AboutService
-      when /(weather|Weather)/
+      when /(weather)/i
         Jarvis::Services::WeatherService
-      when /(tweet|Tweet)/
+      when /(tweet)/i
         Jarvis::Services::TwitterService
-      when /(8ball|8BALL|8Ball)/
+      when /(8ball)/i
         Jarvis::Services::EightballService
-      when /(quote|Quote)/
+      when /(quote)/i
         Jarvis::Services::QuoteService
-      when /(are you up|Are You Up|Are you up)/
+      when /(are you up)/i
         Jarvis::Services::UpService
-      when /(word up|Word Up|Word up|word Up)/
+      when /(word up)/i
         Jarvis::Services::UrbanDictionaryService
-      when /(roll|ROLL|Roll|diceroll|Diceroll|DICEROLL|DiceRoll)/
+      when /(roll|diceroll)/i
         Jarvis::Services::DiceService
-      when /(suit up|Suit Up|SUIT UP)/
+      when /(suit up)/i
         Jarvis::Services::NPHService
       when /stats/i
         Jarvis::Services::StatsService
