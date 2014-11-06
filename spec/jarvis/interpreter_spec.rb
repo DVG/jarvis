@@ -51,6 +51,14 @@ describe Jarvis::Interpreter do
         expect(subject.determine_service).to eq Jarvis::Services::RudeService
       end
     end
+    
+    describe "Route dice rolls to Dice Service" do
+      let(:params) { slack_outgoing_message(text: "Jarvis, roll 2d20") }
+      subject { described_class.new(params) }
+      it "Returns the DiceService constant" do
+        expect(subject.determine_service).to eq Jarvis::Services::DiceService
+      end
+    end
   end
 
 end
