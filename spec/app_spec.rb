@@ -32,4 +32,9 @@ describe "App" do
     post "/jarvis", slack_outgoing_message(text: "Jarvis, weather")
     expect(last_response).to be_ok
   end
+
+  it "responds with NPH" do
+    post "/jarvis", slack_outgoing_message(text: "Jarvis, suit up")
+    expect(last_response).to be_ok
+  end
 end

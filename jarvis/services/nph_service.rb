@@ -1,6 +1,6 @@
 module Jarvis
   module Services
-    class FactService < BaseService
+    class NPHService < BaseService
       def say
         [
           "http://i.imgur.com/Anl7UDF.jpg",
