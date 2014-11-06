@@ -35,6 +35,8 @@ module Jarvis
         Jarvis::Services::UrbanDictionaryService
       when /\?$/
         Jarvis::Services::EightballService
+      when /([\d]*\.?[\d]*)\s*([\+\-\/\*\%])\s*([\d]*\.?[\d]*)/
+        Jarvis::Services::MathService
       else
         Jarvis::Services::NullService
       end
