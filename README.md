@@ -1,4 +1,6 @@
-# Jarvis - A General Purpose Slackbox
+# Jarvis [![Build Status](https://travis-ci.org/DVG/jarvis.svg?branch=master)](https://travis-ci.org/DVG/jarvis)
+
+##A General Purpose Slackbox
 
 Jarvis is an sinatra based app that responds to post requests to /jarvis with various services, located at /jarvis/services.
 
