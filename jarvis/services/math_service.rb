@@ -3,7 +3,7 @@ module Jarvis
     class MathService < BaseService
 
       def run
-        @answer = evaluate(@text)
+        @answer = evaluate(text)
         self
       end
 
