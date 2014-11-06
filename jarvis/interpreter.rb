@@ -10,8 +10,8 @@ module Jarvis
       when /^(Siri|siri)/
         Jarvis::Services::SiriService
       when /(gif|GIF)/
-        Jarvis::Services::GifService 
-      when Jarvis::Services::MemeGeneratorService::REGEX 
+        Jarvis::Services::GifService
+      when Jarvis::Services::MemeGeneratorService::REGEX
         Jarvis::Services::MemeGeneratorService
       when /(thanks|thank you|Thanks|Thank You).*/
         Jarvis::Services::PoliteService
@@ -37,6 +37,8 @@ module Jarvis
         Jarvis::Services::DiceService
       when /(suit up|Suit Up|SUIT UP)/
         Jarvis::Services::NPHService
+      when /stats/i
+        Jarvis::Services::StatsService
       when /\?$/
         Jarvis::Services::EightballService
       when /([\d]*\.?[\d]*)\s*([\+\-\/\*\%])\s*([\d]*\.?[\d]*)/
