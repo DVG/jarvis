@@ -27,15 +27,31 @@ module MemeGenerator
     end
 
     def meme_params
-      "&generatorID=#{generator_id}&imageID=#{image_id}"
+      "generatorID=#{generator_id}&imageID=#{image_id}"
     end
 
     def text_params
-      text1.nil? ? "&text0=#{URL.encode(text0)}&text1=#{URI.encode(text1)}" : "&text0=#{URI.encode(text0)}" 
+      "text0=#{URI.encode(text0)}&text1=#{URI.encode(text1)}"
     end
     
     def url
-      "http://version1.api.memegenerator.net/Instance_Create?username=#{USERNAME}&password=#{PASSWORD}&languageCode=en#{meme_params}#{text_params}"
+      "http://version1.api.memegenerator.net/Instance_Create?#{params}"
+    end
+
+    def username
+      "username=#{USERNAME}"
+    end
+
+    def password
+      "password=#{PASSWORD}"
+    end
+
+    def language
+      "languageCode=en"
+    end
+
+    def params
+      [username, password, language, meme_params, text_params].join("&")
     end
 
   end
