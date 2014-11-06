@@ -3,6 +3,7 @@ $: << File.expand_path('../', __FILE__)
 require 'sinatra'
 require "sinatra/json"
 require 'json'
+require 'meme_generator'
 require 'jarvis'
 require 'slack'
 require 'twitter'
