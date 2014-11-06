@@ -33,6 +33,8 @@ module Jarvis
         Jarvis::Services::UpService
       when /.*(word up|Word Up|Word up|word Up)/
         Jarvis::Services::UrbanDictionaryService
+      when /.*(diceroll|Diceroll|DICEROLL|DiceRoll)/
+        Jarvis::Services::DiceService
       when /\?$/
         Jarvis::Services::EightballService
       when /([\d]*\.?[\d]*)\s*([\+\-\/\*\%])\s*([\d]*\.?[\d]*)/
