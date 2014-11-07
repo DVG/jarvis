@@ -1,19 +1,17 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(success kid|one does not simply)/i
+      REGEX = /(success kid)/i
 
       def meme_class
         case text
         when /(success kid)/i
           MemeGenerator::SuccessKid
-        when /(one does not simply)/i
-          MemeGenerator::OneDoesNotSimply
         end
       end
 
       def run 
-        link = meme_class.new(text).get
+        response = meme_class.new(text).get
         @link = response.parsed_response["result"]["instanceImageUrl"]
       end
 
