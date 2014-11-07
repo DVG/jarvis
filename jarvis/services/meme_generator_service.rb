@@ -7,6 +7,8 @@ module Jarvis
         case text
         when /(success kid)/i
           MemeGenerator::SuccessKid
+        when /(one does not simply)/i
+          MemeGenerator::OneDoesNotSimply
         end
       end
 
