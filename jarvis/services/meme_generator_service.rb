@@ -11,7 +11,7 @@ module Jarvis
       end
 
       def run 
-        link = meme_class.new(text).get
+        response = meme_class.new(text).get
         @link = response.parsed_response["result"]["instanceImageUrl"]
       end
 
