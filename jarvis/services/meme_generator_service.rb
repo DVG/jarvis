@@ -1,7 +1,7 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(success kid|one does not simply|y u no)/i
+      REGEX = /(success kid|one does not simply|y u no|what if i told you)/i
 
       def meme_class
         case text
@@ -11,6 +11,8 @@ module Jarvis
           MemeGenerator::OneDoesNotSimply
         when /(y u no)/i
           MemeGenerator::YUNo
+        when /(what if i told you)/i
+          MemeGenerator::WhatIfIToldYou
         end
       end
 
