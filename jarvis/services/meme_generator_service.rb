@@ -13,6 +13,8 @@ module Jarvis
           MemeGenerator::YUNo
         when /(what if i told you)/i
           MemeGenerator::WhatIfIToldYou
+        when /(willy wonka)/i
+          MemeGenerator::WillyWonka
         end
       end
 
