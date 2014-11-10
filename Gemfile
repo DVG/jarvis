@@ -4,6 +4,7 @@ gem 'sinatra'
 gem "sinatra-contrib"
 gem 'giphy'
 gem 'httparty'
+gem 'unicorn'
 group :test do
   gem 'rspec'
   gem 'byebug'
