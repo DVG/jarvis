@@ -1,7 +1,7 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(success kid|one does not simply|y u no|what if i told you)/i
+      REGEX = /(success kid|one does not simply|y u no|what if i told you|willy wonka)/i
 
       def meme_class
         case text
