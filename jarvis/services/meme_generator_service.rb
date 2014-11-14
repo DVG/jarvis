@@ -22,7 +22,11 @@ module Jarvis
 
       def run 
         response = meme_class.new(text).get
-        @link = response.parsed_response["result"]["instanceImageUrl"]
+        if response.parsed_response["success"]
+          @link = response.parsed_response["data"]["url"]
+        else
+          raise "ImgFlip API failed, sir"
+        end
       end
 
       def say
