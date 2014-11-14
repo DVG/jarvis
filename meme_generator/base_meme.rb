@@ -3,7 +3,7 @@ module MemeGenerator
     require 'uri'
     require 'json'
 
-    USERNAME = ENV["IMGFLIP_USERNAME"]
+    USERNAME = ENV["IMGFLIP_USER"]
     PASSWORD = ENV["IMGFLIP_PASSWORD"]
 
     attr_accessor :request_text, :text0, :text1
@@ -25,7 +25,7 @@ module MemeGenerator
         text0: text0,
         text1: text1
       }.to_json
-      HTTParty.post(url, body)
+      HTTParty.post(url, body: body)
     end
 
     def template_id
