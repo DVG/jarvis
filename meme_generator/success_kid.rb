@@ -1,12 +1,8 @@
 module MemeGenerator
   class SuccessKid < BaseMeme
 
-    def generator_id
-      121
-    end
-
-    def image_id
-      1031
+    def template_id
+      61544
     end
 
     def tokenize

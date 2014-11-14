@@ -1,12 +1,8 @@
 module MemeGenerator
   class OverlyAttachedGirlfriend < BaseMeme
 
-    def generator_id
-      1152019
-    end
-
-    def image_id
-      4915715
+    def template_id
+      100952
     end
 
     def tokenize

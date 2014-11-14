@@ -1,12 +1,8 @@
 module MemeGenerator
   class OneDoesNotSimply < BaseMeme
 
-    def generator_id
-      1259171
-    end
-
-    def image_id
-      5291301
+    def template_id
+      61579
     end
 
     def text0

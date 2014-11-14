@@ -1,12 +1,8 @@
 module MemeGenerator
   class YUNo < BaseMeme
 
-    def generator_id
-      2
-    end
-
-    def image_id
-      166088
+    def template_id
+      61527
     end
 
     def text0

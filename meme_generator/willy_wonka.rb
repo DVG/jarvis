@@ -1,12 +1,8 @@
 module MemeGenerator
   class WillyWonka < BaseMeme
 
-    def generator_id
-      542616
-    end
-
-    def image_id
-      2729805
+    def template_id
+      61582
     end
 
     def tokenize

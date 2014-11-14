@@ -1,12 +1,8 @@
 module MemeGenerator
   class WhatIfIToldYou < BaseMeme
 
-    def generator_id
-      1118843
-    end
-
-    def image_id
-      4796874
+    def template_id
+      100947
     end
 
     def text0
