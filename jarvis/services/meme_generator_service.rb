@@ -1,7 +1,7 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(success kid|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|, everywhere)/i
+      REGEX = /(success kid|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere)/i
 
       def meme_class
         case text
@@ -17,7 +17,7 @@ module Jarvis
           MemeGenerator::WillyWonka
         when /(overly attached girlfriend)/i
           MemeGenerator::OverlyAttachedGirlfriend
-        when /(, everywhere)/i
+        when /(everywhere)/i
           MemeGenerator::Everywhere
         end
       end
