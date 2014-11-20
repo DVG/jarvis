@@ -17,6 +17,8 @@ module Jarvis
         Jarvis::Services::PoliteService
       when /(fact)/i
         Jarvis::Services::FactService
+      when /fuck yeah/i
+        Jarvis::Services::FuckYeahService
       when /(fuck|shit|goddamn)/i
         Jarvis::Services::RudeService
       when /(about)/i
