@@ -21,7 +21,7 @@ module Jarvis
       end
 
       def run 
-        response = JSON.parse(meme_class.new(text).get)
+        response = JSON.parse(meme_class.new(text).get.parsed_response)
         if response["success"]
           @link = response["data"]["url"]
         else
