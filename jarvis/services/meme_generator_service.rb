@@ -17,7 +17,7 @@ module Jarvis
           MemeGenerator::WillyWonka
         when /(overly attached girlfriend)/i
           MemeGenerator::OverlyAttachedGirlfriend
-        when /(overly attached girlfriend)/i
+        when /(, everywhere)/i
           MemeGenerator::Everywhere
         end
       end
