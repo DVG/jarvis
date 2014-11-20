@@ -24,7 +24,7 @@ module MemeGenerator
         password: PASSWORD,
         text0: text0,
         text1: text1
-      }.to_json
+      }
       HTTParty.post(url, body: body)
     end
 
