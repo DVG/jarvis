@@ -21,9 +21,9 @@ module Jarvis
       end
 
       def run 
-        response = meme_class.new(text).get
-        if response.parsed_response["success"]
-          @link = response.parsed_response["data"]["url"]
+        response = JSON.parse(meme_class.new(text).get)
+        if response["success"]
+          @link = response["data"]["url"]
         else
           raise "ImgFlip API failed, sir"
         end
