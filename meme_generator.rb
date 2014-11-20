@@ -5,6 +5,7 @@ require 'meme_generator/y_u_no'
 require 'meme_generator/what_if_i_told_you'
 require 'meme_generator/willy_wonka'
 require 'meme_generator/everywhere'
+require 'meme_generator/picard'
 require 'meme_generator/overly_attached_girlfriend'
 require 'meme_generator/most_interesting_man'
 
