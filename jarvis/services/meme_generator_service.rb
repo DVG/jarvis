@@ -21,6 +21,8 @@ module Jarvis
           MemeGenerator::Everywhere
         when /(i don'?t always.+but when i do)/i
           MemeGenerator::MostInterestingMan
+        when /(picard)/
+          MemeGenerator::Picard
         end
       end
 
