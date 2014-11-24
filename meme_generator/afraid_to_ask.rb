@@ -10,7 +10,7 @@ module MemeGenerator
     end
 
     def tokenize
-      captures = request_text.match(/jarvis (.+)and at this point/i).captures.map {|t| t.strip if t }
+      captures = request_text.match(/jarvis (.+),? and at this point/i).captures.map {|t| t.strip if t }
       self.text0 = captures[0] || ""
       true
     end
