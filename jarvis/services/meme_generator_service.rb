@@ -1,7 +1,7 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(sudden clarity|success kid|not sure if|picard|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere|i don'?t always.+but when i do)/i
+      REGEX = /(afraid to ask|sudden clarity|success kid|not sure if|picard|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere|i don'?t always.+but when i do)/i
 
       def meme_class
         case text
@@ -27,6 +27,8 @@ module Jarvis
           MemeGenerator::NotSureIf
         when /(sudden clarity)/
           MemeGenerator::SuddenClarity
+        when /(afraid to ask)/
+          MemeGenerator::AfraidToAsk
         end
       end
 

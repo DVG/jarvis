@@ -10,4 +10,5 @@ require 'meme_generator/overly_attached_girlfriend'
 require 'meme_generator/most_interesting_man'
 require 'meme_generator/not_sure_if'
 require 'meme_generator/sudden_clarity'
+require 'meme_generator/afraid_to_ask'
 
