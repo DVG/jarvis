@@ -13,6 +13,8 @@ module Jarvis
         Jarvis::Services::GifService
       when Jarvis::Services::MemeGeneratorService::REGEX
         Jarvis::Services::MemeGeneratorService
+      when /sorting hat|where do I belong/i
+        Jarvis::Services::SortingHatService
       when /(thanks|thank you)/i
         Jarvis::Services::PoliteService
       when /(fact)/i
