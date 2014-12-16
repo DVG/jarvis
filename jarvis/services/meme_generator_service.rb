@@ -1,7 +1,7 @@
 module Jarvis
   module Services
     class MemeGeneratorService < BaseService
-      REGEX = /(and it'?s gone|afraid to ask|sudden clarity|success kid|not sure if|picard|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere|i don'?t always.+but when i do)/i
+      REGEX = /(you're gonna have a bad time|and it'?s gone|afraid to ask|sudden clarity|success kid|not sure if|picard|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere|i don'?t always.+but when i do)/i
 
       def meme_class
         case text
@@ -21,16 +21,18 @@ module Jarvis
           MemeGenerator::Everywhere
         when /(i don'?t always.+but when i do)/i
           MemeGenerator::MostInterestingMan
-        when /(picard)/
+        when /(picard)/i
           MemeGenerator::Picard
-        when /(not sure if)/
+        when /(not sure if)/i
           MemeGenerator::NotSureIf
-        when /(sudden clarity)/
+        when /(sudden clarity)/i
           MemeGenerator::SuddenClarity
-        when /(afraid to ask)/
+        when /(afraid to ask)/i
           MemeGenerator::AfraidToAsk
-        when /(and it'?s gone)/
+        when /(and it'?s gone)/i
           MemeGenerator::AndItsGone
+        when /(you're gonna have a bad time)/i
+          MemeGenerator::GonnaHaveABadTime
         end
       end
 
