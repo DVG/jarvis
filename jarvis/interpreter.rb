@@ -9,6 +9,8 @@ module Jarvis
       case text
       when /^(Siri)/i
         Jarvis::Services::SiriService
+      when /^ultron/i
+        Jarvis::Services::UltronService
       when /(gif)/i
         Jarvis::Services::GifService
       when Jarvis::Services::MemeGeneratorService::REGEX
